@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -8,11 +8,23 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 })
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument-serif',
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Ikobiz — Vote for the future of local commerce in Kenya',
+  description:
+    'Ikobiz is building a smarter way for communities in Kenya to discover nearby sellers, shop instantly through familiar messaging, and help small businesses thrive digitally. Vote for Ikobiz and join early access.',
   generator: 'v0.app',
+  openGraph: {
+    title: 'Ikobiz — Shopping as simple as a WhatsApp message',
+    description:
+      'Discover nearby sellers, shop instantly, and support local businesses across Kenya. Vote for Ikobiz.',
+    type: 'website',
+  },
   icons: {
     icon: [
       {
@@ -33,11 +45,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  themeColor: '#1f7a52',
+  colorScheme: 'light',
 }
 
 export default function RootLayout({
@@ -46,7 +55,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} bg-background`}
+    >
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
