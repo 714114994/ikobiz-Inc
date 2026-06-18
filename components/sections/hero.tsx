@@ -43,52 +43,15 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <div className="relative animate-float">
+          <div className="relative animate-float overflow-hidden rounded-[2rem] border border-border bg-card/90">
             <Image
-              src="/images/hero-whatsapp-mockup.png"
+              src="/images/screen.png"
               alt="A smartphone showing a WhatsApp conversation where a shopper searches for products and receives nearby seller results"
               width={900}
               height={900}
               priority
-              className="h-auto w-full drop-shadow-2xl"
+              className="h-auto w-full rounded-[2rem] drop-shadow-2xl"
             />
-          </div>
-
-          {/* floating marketplace cards */}
-          <div className="absolute -left-2 top-10 hidden rounded-2xl border border-border bg-card/95 p-3 shadow-lg backdrop-blur sm:block">
-            <div className="flex items-center gap-2 text-sm">
-              <span className="flex size-8 items-center justify-center rounded-lg bg-secondary text-primary">
-                <MapPin className="size-4" />
-              </span>
-              <div>
-                <p className="font-semibold leading-tight text-card-foreground">3 sellers nearby</p>
-                <p className="text-xs text-muted-foreground">within 1.2 km</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="absolute -right-2 top-1/3 hidden rounded-2xl border border-border bg-card/95 p-3 shadow-lg backdrop-blur sm:block">
-            <div className="flex items-center gap-2 text-sm">
-              <span className="flex size-8 items-center justify-center rounded-lg bg-secondary text-primary">
-                <ShoppingBag className="size-4" />
-              </span>
-              <div>
-                <p className="font-semibold leading-tight text-card-foreground">Order placed</p>
-                <p className="text-xs text-muted-foreground">Mama Njeri Groceries</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="absolute -bottom-2 left-6 hidden rounded-2xl border border-border bg-card/95 p-3 shadow-lg backdrop-blur sm:block">
-            <div className="flex items-center gap-2 text-sm">
-              <span className="flex size-8 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                <Star className="size-4 fill-current" />
-              </span>
-              <div>
-                <p className="font-semibold leading-tight text-card-foreground">Trusted local</p>
-                <p className="text-xs text-muted-foreground">4.9 community rating</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

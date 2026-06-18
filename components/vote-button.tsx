@@ -15,18 +15,12 @@ export function VoteButton({
   children?: React.ReactNode
   showArrow?: boolean
 }) {
-  const isExternal = VOTE_URL.startsWith("http")
   return (
     <Button
       size={size}
       className={cn("group gap-2 text-base", className)}
-      render={
-        <Link
-          href={VOTE_URL}
-          target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noopener noreferrer" : undefined}
-        />
-      }
+      nativeButton={false}
+      render={<a href={VOTE_URL} />}
     >
       {children}
       {showArrow ? (

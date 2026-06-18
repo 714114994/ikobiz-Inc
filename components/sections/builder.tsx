@@ -5,13 +5,13 @@ export function Builder() {
     <section id="story" className="bg-secondary/40 py-20 sm:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[5fr_7fr] lg:gap-16">
         <div className="relative">
-          <div className="overflow-hidden rounded-3xl border border-border">
+          <div className="overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-sm">
             <Image
-              src="/images/builder-portrait.png"
-              alt="The Kenyan student and founder behind Ikobiz, working on a laptop"
+              src="/images/ikobiz-logo.png"
+              alt="Ikobiz logo"
               width={800}
               height={900}
-              className="h-auto w-full object-cover"
+              className="h-auto w-full object-contain"
             />
           </div>
           <span className="absolute -bottom-4 left-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-card-foreground shadow-md">
