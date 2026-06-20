@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   title: 'Ikobiz — Vote for the future of local commerce in Kenya',
   description:
     'Ikobiz is building a smarter way for communities in Kenya to discover nearby sellers, shop instantly through familiar messaging, and help small businesses thrive digitally. Vote for Ikobiz and join early access.',
-  generator: 'v0.app',
   openGraph: {
     title: 'Ikobiz — Shopping as simple as a WhatsApp message',
     description:
@@ -28,21 +27,8 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/images/ikobiz-logo.png',
+    apple: '/images/ikobiz-logo.png',
   },
 }
 
