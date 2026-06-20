@@ -2,40 +2,33 @@
 
 import { db } from "@/lib/db"
 import { waitlist } from "@/lib/db/schema"
-import { eq } from "drizzle-orm"
 
 export type WaitlistResult = {
   success: boolean
   message: string
 }
 
-function isValidEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-}
+const VALID_INTENTS = ["sell", "shop", "both"] as const
 
 export async function joinWaitlist(_prev: WaitlistResult | null, formData: FormData): Promise<WaitlistResult> {
   const name = String(formData.get("name") ?? "").trim()
-  const email = String(formData.get("email") ?? "")
-    .trim()
-    .toLowerCase()
-  const phoneRaw = String(formData.get("phone") ?? "").trim()
-  const phone = phoneRaw.length > 0 ? phoneRaw : null
+  const whatsappNumber = String(formData.get("whatsappNumber") ?? "").trim()
+  const intent = String(formData.get("intent") ?? "").trim()
 
   if (name.length < 2) {
     return { success: false, message: "Please enter your name." }
   }
-  if (!isValidEmail(email)) {
-    return { success: false, message: "Please enter a valid email address." }
+
+  if (whatsappNumber.length < 5) {
+    return { success: false, message: "Please enter your WhatsApp number so we can send your invite." }
+  }
+
+  if (!VALID_INTENTS.includes(intent as any)) {
+    return { success: false, message: "Please select how you'd like to use the platform." }
   }
 
   try {
-    const existing = await db.select({ id: waitlist.id }).from(waitlist).where(eq(waitlist.email, email)).limit(1)
-
-    if (existing.length > 0) {
-      return { success: true, message: "You're already on the list. Thank you for your support!" }
-    }
-
-    await db.insert(waitlist).values({ name, email, phone })
+    await db.insert(waitlist).values({ name, whatsappNumber, intent })
     return { success: true, message: "You're on the list!" }
   } catch (error) {
     console.log("[v0] joinWaitlist error:", error)
