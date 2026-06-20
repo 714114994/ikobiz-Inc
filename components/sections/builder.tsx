@@ -11,6 +11,7 @@ export function Builder() {
               alt="Ikobiz logo"
               width={800}
               height={900}
+              sizes="(max-width: 1024px) 80vw, 400px"
               className="h-auto w-full object-contain"
             />
           </div>

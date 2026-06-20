@@ -19,6 +19,7 @@ export function Solution() {
               alt="A shopper receiving a delivery from a local vendor in a Nairobi neighborhood, with a phone showing a chat conversation"
               width={1000}
               height={1000}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="h-auto w-full"
             />
           </div>

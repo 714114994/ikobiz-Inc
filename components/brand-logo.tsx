@@ -10,6 +10,8 @@ export function BrandLogo({ className }: { className?: string }) {
           alt="Ikobiz logo"
           width={32}
           height={32}
+          priority
+          sizes="32px"
           className="h-8 w-8 object-contain"
         />
       </span>

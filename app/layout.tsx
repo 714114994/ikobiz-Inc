@@ -3,15 +3,17 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono, Instrument_Serif } from 'next/font/google'
 import './globals.css'
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
+const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'], preload: true })
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+  preload: true,
 })
 const instrumentSerif = Instrument_Serif({
   variable: '--font-instrument-serif',
   weight: '400',
   subsets: ['latin'],
+  preload: true,
 })
 
 export const metadata: Metadata = {

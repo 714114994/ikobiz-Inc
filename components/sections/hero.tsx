@@ -50,6 +50,7 @@ export function Hero() {
               width={900}
               height={900}
               priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="h-auto w-full rounded-[2rem] drop-shadow-2xl"
             />
           </div>
